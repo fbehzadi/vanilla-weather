@@ -25,7 +25,9 @@ function formatDate(date) {
 
 function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#icon");
-
+  celsiusTemperature = response.data.main.temp;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
